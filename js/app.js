@@ -70,6 +70,15 @@ const activeSection =()=>{
     });
 };
 
+function myFunction(e){
+    const elems = document.querySelectorAll('.active');
+    [].forEach.call(elems,function(el){
+        el.classList.remove('active');
+    });
+    e.target.className = 'active';
+}
+
+
 document.addEventListener('scroll',activeSection);
 
 // Scroll to anchor ID using scrollTO event
@@ -83,6 +92,10 @@ const scroll_to = () =>{
         });
     });
 };
+
+
+
+
 scroll_to();
 
 //Get the button:
@@ -101,5 +114,5 @@ function scrollFunction() {
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  document.documentElement.scrollTop = 0; 
+  document.documentElement.scrollTop = 0;
 };
